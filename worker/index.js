@@ -291,21 +291,24 @@ function escapeHtml(str) {
 }
 
 function decodeBase64(str) {
-  // Handle Node.js and browser/worker environments
+  // Properly decode base64 with UTF-8 support
   const cleaned = str.replace(/\n/g, '');
-  try {
-    return atob(cleaned);
-  } catch {
-    return Buffer.from(cleaned, 'base64').toString('utf-8');
+  const binaryStr = atob(cleaned);
+  const bytes = new Uint8Array(binaryStr.length);
+  for (let i = 0; i < binaryStr.length; i++) {
+    bytes[i] = binaryStr.charCodeAt(i);
   }
+  return new TextDecoder('utf-8').decode(bytes);
 }
 
 function encodeBase64(str) {
-  try {
-    return btoa(unescape(encodeURIComponent(str)));
-  } catch {
-    return Buffer.from(str, 'utf-8').toString('base64');
+  // Properly encode UTF-8 to base64
+  const bytes = new TextEncoder().encode(str);
+  let binaryStr = '';
+  for (let i = 0; i < bytes.length; i++) {
+    binaryStr += String.fromCharCode(bytes[i]);
   }
+  return btoa(binaryStr);
 }
 
 function jsonResponse(data, status = 200) {
