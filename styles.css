@@ -1069,11 +1069,14 @@ input, textarea, select {
 }
 
 .checkbox-custom {
+    display: inline-block;
     width: 22px;
     height: 22px;
-    border: 2px solid var(--color-cream-dark);
+    min-width: 22px;
+    min-height: 22px;
+    border: 2px solid var(--color-warm-gray-light);
     border-radius: var(--radius-sm);
-    background: var(--color-cream);
+    background: white;
     flex-shrink: 0;
     position: relative;
     transition: all var(--transition-fast);
