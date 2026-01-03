@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Creations — A Showcase of Human + AI Creativity</title>
+    <meta name="description" content="Discover amazing projects built by the community using Claude Opus 4.5 and Claude Code. Submit your own creation!">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Floating decorative elements -->
+    <div class="floating-decor">
+        <svg class="decor decor-1" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="2" stroke-dasharray="8 6"/>
+        </svg>
+        <svg class="decor decor-2" viewBox="0 0 60 60" fill="none">
+            <path d="M30 5 L35 25 L55 30 L35 35 L30 55 L25 35 L5 30 L25 25 Z" fill="currentColor"/>
+        </svg>
+        <svg class="decor decor-3" viewBox="0 0 80 80" fill="none">
+            <rect x="10" y="10" width="60" height="60" rx="8" stroke="currentColor" stroke-width="2" transform="rotate(15 40 40)"/>
+        </svg>
+        <svg class="decor decor-4" viewBox="0 0 50 50" fill="none">
+            <circle cx="25" cy="25" r="20" fill="currentColor"/>
+        </svg>
+        <svg class="decor decor-5" viewBox="0 0 100 100" fill="none">
+            <path d="M10 50 Q50 10 90 50 Q50 90 10 50" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">Claude Creations</span>
+            </a>
+            <div class="nav-links">
+                <a href="#creations">Creations</a>
+                <a href="#submit">Submit Yours</a>
+                <a href="#about">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Community Showcase
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Beautiful things</span>
+                <span class="title-line accent">people have made</span>
+                <span class="title-line">with Claude</span>
+            </h1>
+            <p class="hero-description">
+                A celebration of creativity, collaboration, and the amazing projects
+                built by everyday people using Claude Opus 4.5 and Claude Code.
+                From first-time coders to seasoned developers — everyone's making something wonderful.
+            </p>
+            <div class="hero-actions">
+                <a href="#creations" class="btn btn-primary">
+                    <span>Explore Creations</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </a>
+                <a href="#submit" class="btn btn-secondary">Share Your Project</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="visual-card card-1">
+                <div class="card-icon">🎨</div>
+                <span>Visualizers</span>
+            </div>
+            <div class="visual-card card-2">
+                <div class="card-icon">🎮</div>
+                <span>Games</span>
+            </div>
+            <div class="visual-card card-3">
+                <div class="card-icon">🛠️</div>
+                <span>Tools</span>
+            </div>
+            <div class="visual-card card-4">
+                <div class="card-icon">🌐</div>
+                <span>Websites</span>
+            </div>
+            <div class="visual-card card-5">
+                <div class="card-icon">📱</div>
+                <span>Apps</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Banner -->
+    <section class="stats-banner">
+        <div class="stats-inner">
+            <div class="stat">
+                <span class="stat-number" data-count="127">0</span>
+                <span class="stat-label">Projects Shared</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-number" data-count="89">0</span>
+                <span class="stat-label">First-Time Coders</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Possibilities</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creations Gallery -->
+    <section id="creations" class="creations">
+        <div class="section-header">
+            <span class="section-tag">The Gallery</span>
+            <h2 class="section-title">Community Creations</h2>
+            <p class="section-desc">Every project here started with an idea and a conversation with Claude. Some creators had never written a line of code before.</p>
+        </div>
+
+        <!-- Filter Tags -->
+        <div class="filter-tags">
+            <button class="filter-tag active" data-filter="all">All Projects</button>
+            <button class="filter-tag" data-filter="visualizer">Visualizers</button>
+            <button class="filter-tag" data-filter="game">Games</button>
+            <button class="filter-tag" data-filter="tool">Tools</button>
+            <button class="filter-tag" data-filter="website">Websites</button>
+            <button class="filter-tag" data-filter="app">Apps</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+
+            <!-- Project Card - Subscription Canceller -->
+            <article class="project-card" data-category="tool">
+                <a href="https://x.com/frankdegods/status/2007199488776253597" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/frank-subscription-canceller.png" alt="$27K Subscription Canceller" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by @frankdegods</span>
+                    </div>
+                    <h3 class="card-title">$27K Subscription Canceller</h3>
+                    <p class="card-desc">A Claude Code skill that reads credit card statements, extracts subscriptions, asks which to cancel, then opens Chrome and literally cancels them. Saved $27,480/year. 326K views.</p>
+                    <div class="card-footer">
+                        <a href="https://x.com/frankdegods/status/2007199488776253597" target="_blank" rel="noopener" class="card-link">View on X →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card - Boris Cherny Stats -->
+            <article class="project-card" data-category="tool">
+                <a href="https://x.com/bcherny/status/2004887829252317325" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/boris-cherny-stats.png" alt="Boris Cherny Claude Code Stats" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by @bcherny</span>
+                    </div>
+                    <h3 class="card-title">259 PRs in 30 Days</h3>
+                    <p class="card-desc">Claude Code's creator: "In the last 30 days, I landed 259 PRs — 497 commits, 40k lines added, 38k removed. Every single line was written by Claude Code + Opus 4.5."</p>
+                    <div class="card-footer">
+                        <a href="https://x.com/bcherny/status/2004887829252317325" target="_blank" rel="noopener" class="card-link">View on X →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card - Google Agent Orchestrator -->
+            <article class="project-card" data-category="tool">
+                <a href="https://x.com/rakyll/status/2007239758158975130" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/rakyll-google-agents.png" alt="Distributed Agent Orchestrators" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by @rakyll</span>
+                    </div>
+                    <h3 class="card-title">1 Hour vs 1 Year at Google</h3>
+                    <p class="card-desc">"I gave Claude Code a description of the problem, it generated what we built last year in an hour." - Google engineer on distributed agent orchestrators. 252K views.</p>
+                    <div class="card-footer">
+                        <a href="https://x.com/rakyll/status/2007239758158975130" target="_blank" rel="noopener" class="card-link">View on X →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 1 - Siemens NX Clone -->
+            <article class="project-card" data-category="tool">
+                <a href="https://x.com/aphysicist/status/2005269379425149177" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/siemens-nx-f35-cad.png" alt="Siemens NX Clone with F-35 CAD" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by @aphysicist</span>
+                    </div>
+                    <h3 class="card-title">Siemens NX Clone + F-35 CAD</h3>
+                    <p class="card-desc">A full clone of Siemens NX CAD software built with Claude Code that generated CAD for an F-35 fighter jet on the spot. 738K+ views on X.</p>
+                    <div class="card-footer">
+                        <a href="https://x.com/aphysicist/status/2005269379425149177" target="_blank" rel="noopener" class="card-link">View on X →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 2 - Turret Defense -->
+            <article class="project-card" data-category="game">
+                <a href="https://www.reddit.com/r/TurretDefense/comments/1pqlju7/turret_defense_reddit_game/" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/turret-defense-game.png" alt="Turret Defense Reddit Game" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Game</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by u/bri-_-guy</span>
+                    </div>
+                    <h3 class="card-title">Turret Defense</h3>
+                    <p class="card-desc">A Reddit-native tower defense game that became one of the fastest growing games on the platform. Defend the core, survive the swarm. 10.5K+ plays.</p>
+                    <div class="card-footer">
+                        <span class="experience-badge">
+                            <span class="badge-icon">✨</span>
+                            First project ever
+                        </span>
+                        <a href="https://www.reddit.com/r/TurretDefense/comments/1pqlju7/turret_defense_reddit_game/" target="_blank" rel="noopener" class="card-link">Play on Reddit →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 3 - Spec-Based Workflow -->
+            <article class="project-card" data-category="tool">
+                <a href="https://x.com/trq212/status/2005315275026260309" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/spec-based-workflow.png" alt="Spec-Based Development Workflow" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by @trq212</span>
+                    </div>
+                    <h3 class="card-title">Spec-Based Development Workflow</h3>
+                    <p class="card-desc">A powerful technique for building large features: start with a minimal spec, have Claude interview you using AskUserQuestionTool, then execute. 1.1M views.</p>
+                    <div class="card-footer">
+                        <a href="https://x.com/trq212/status/2005315275026260309" target="_blank" rel="noopener" class="card-link">View on X →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 4 - AI Influencer Video -->
+            <article class="project-card" data-category="visualizer">
+                <a href="https://x.com/fabianstelzer/status/2006014021527380343" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/ai-influencer-statins.png" alt="AI Influencer Explaining Statins" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Visualizer</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by @fabianstelzer</span>
+                    </div>
+                    <h3 class="card-title">AI Influencer Whiteboard Video</h3>
+                    <p class="card-desc">Claude generated an influencer-style video explaining LDL cholesterol and statins on a whiteboard. "You are insufficiently astonished." 342K views.</p>
+                    <div class="card-footer">
+                        <a href="https://x.com/fabianstelzer/status/2006014021527380343" target="_blank" rel="noopener" class="card-link">View on X →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 5 - Claude Grows a Plant -->
+            <article class="project-card" data-category="tool">
+                <a href="https://x.com/d33v33d0/status/2006221407340867881" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/claude-grows-plant.png" alt="Claude Keeping a Plant Alive" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by @d33v33d0</span>
+                    </div>
+                    <h3 class="card-title">Claude Grows a Plant</h3>
+                    <p class="card-desc">Claude can code, but can Claude grow? Yes! An automated system where Claude successfully keeps a living organism (Sol the plant) alive. 145K views.</p>
+                    <div class="card-footer">
+                        <a href="https://x.com/d33v33d0/status/2006221407340867881" target="_blank" rel="noopener" class="card-link">View on X →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 6 - Jarrod Watts Interview Command -->
+            <article class="project-card" data-category="tool">
+                <a href="https://x.com/jarrodwatts/status/2006138974834716993" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/jarrod-watts-interview-command.png" alt="Custom /interview Command" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by @jarrodwatts</span>
+                    </div>
+                    <h3 class="card-title">Custom /interview Command</h3>
+                    <p class="card-desc">A custom Claude Code command that creates bulletproof specs by having Claude ask 20-50 clarifying questions. Great for removing ambiguity! 38.3K views.</p>
+                    <div class="card-footer">
+                        <a href="https://x.com/jarrodwatts/status/2006138974834716993" target="_blank" rel="noopener" class="card-link">View on X →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 7 - Claire Silver UnrealMCP -->
+            <article class="project-card" data-category="tool">
+                <a href="https://x.com/ClaireSilver12/status/2003198927236137271" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/claire-silver-unreal-mcp.png" alt="UnrealMCP Tutorial" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by @ClaireSilver12</span>
+                    </div>
+                    <h3 class="card-title">UnrealMCP Tutorial</h3>
+                    <p class="card-desc">Claude absolutely RIPPING through Unreal Engine, building a modern mansion with primitives. Prompt what you want, he does it and gets creative too. 564.4K views.</p>
+                    <div class="card-footer">
+                        <a href="https://x.com/ClaireSilver12/status/2003198927236137271" target="_blank" rel="noopener" class="card-link">View on X →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 8 - Yam Peleg WhatsApp Claude -->
+            <article class="project-card" data-category="tool">
+                <a href="https://x.com/Yampeleg/status/2000642897402880491" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/yam-peleg-whatsapp-claude.png" alt="WhatsApp Claude Code Integration" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by @Yampeleg</span>
+                    </div>
+                    <h3 class="card-title">WhatsApp Claude Code</h3>
+                    <p class="card-desc">AGI in your pocket. Claude wired to WhatsApp with its own phone number, browser access, voice notes, and full control—all vibe-coded from a phone without touching a computer. 412K views.</p>
+                    <div class="card-footer">
+                        <a href="https://x.com/Yampeleg/status/2000642897402880491" target="_blank" rel="noopener" class="card-link">View on X →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 9 - Clayton Bird Feeder -->
+            <article class="project-card" data-category="tool">
+                <a href="https://x.com/clayhaight/status/2005399980022898939" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/clayton-bird-feeder.png" alt="Bird Feeder Camera" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by @clayhaight</span>
+                    </div>
+                    <h3 class="card-title">Mom's Bird Journal</h3>
+                    <p class="card-desc">A $30 bird feeder camera for mom with motion detection and bird classification. Claude built the entire system including ESP32 firmware and Fly deployment. 837.1K views.</p>
+                    <div class="card-footer">
+                        <span class="experience-badge">
+                            <span class="badge-icon">✨</span>
+                            First web project
+                        </span>
+                        <a href="https://x.com/clayhaight/status/2005399980022898939" target="_blank" rel="noopener" class="card-link">View on X →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 10 - Max Woolf MIDI Mixer -->
+            <article class="project-card" data-category="tool">
+                <a href="https://x.com/minimaxir/status/2005779586676842646" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/max-woolf-midi-mixer.png" alt="MIDI Mixer Terminal App" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by @minimaxir</span>
+                    </div>
+                    <h3 class="card-title">MIDI Mixer in Rust</h3>
+                    <p class="card-desc">A full-on MIDI mixer as a terminal app, written in Rust. "Opus 4.5 is an order of magnitude better than coding LLMs released just months before it." 504.7K views.</p>
+                    <div class="card-footer">
+                        <a href="https://x.com/minimaxir/status/2005779586676842646" target="_blank" rel="noopener" class="card-link">View on X →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 11 - 24-Hour Audio Visualizer -->
+            <article class="project-card" data-category="visualizer">
+                <a href="https://www.reddit.com/r/ClaudeAI/comments/1pzhwpk/my_wife_left_town_my_dog_is_sedated_and_claude/" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/visualizer-sedated-dog.png" alt="Audio Visualizer Built in 24 Hours" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Visualizer</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by u/Artistic-Disaster-48</span>
+                    </div>
+                    <h3 class="card-title">24-Hour Audio Visualizer</h3>
+                    <p class="card-desc">"My wife left town, my dog is sedated, and Claude convinced me I'm a coding god." Built a stunning visualizer in 24 hours with zero experience.</p>
+                    <div class="card-footer">
+                        <span class="experience-badge">
+                            <span class="badge-icon">✨</span>
+                            First project ever
+                        </span>
+                        <a href="https://www.reddit.com/r/ClaudeAI/comments/1pzhwpk/my_wife_left_town_my_dog_is_sedated_and_claude/" target="_blank" rel="noopener" class="card-link">View on Reddit →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 12 - PR Zero Fitness App -->
+            <article class="project-card" data-category="app">
+                <a href="https://www.reddit.com/r/ClaudeAI/comments/1q0bic0/comment/nwwwg0y/" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/pr-zero-fitness.png" alt="PR Zero Fitness App" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">App</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by u/MonsieurCake</span>
+                    </div>
+                    <h3 class="card-title">PR Zero Fitness App</h3>
+                    <p class="card-desc">A physiotherapist from France built a fitness app with auto-regulated programs, injury prevention, and gym gamification. Testing with real patients.</p>
+                    <div class="card-footer">
+                        <a href="https://www.reddit.com/r/ClaudeAI/comments/1q0bic0/comment/nwwwg0y/" target="_blank" rel="noopener" class="card-link">View on Reddit →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 13 - SignalCast -->
+            <article class="project-card" data-category="app">
+                <a href="https://www.reddit.com/r/ClaudeAI/comments/1q0bic0/comment/nwx53hg/" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/signalcast-podcast.png" alt="SignalCast Podcast Digest" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">App</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by u/OtherwiseTwo8053</span>
+                    </div>
+                    <h3 class="card-title">SignalCast</h3>
+                    <p class="card-desc">Turns 10 hours of podcasts into a 10-minute weekly digest. Claude Haiku extracts key insights, delivered every Monday. Free tier available.</p>
+                    <div class="card-footer">
+                        <a href="https://www.reddit.com/r/ClaudeAI/comments/1q0bic0/comment/nwx53hg/" target="_blank" rel="noopener" class="card-link">View on Reddit →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 14 - Cobuckets -->
+            <article class="project-card" data-category="website">
+                <a href="https://www.reddit.com/r/ClaudeAI/comments/1q0bic0/comment/nwwrkad/" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/cobuckets-goals.png" alt="Cobuckets Goal Tracker" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Website</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by u/ParadoxicalGlutton</span>
+                    </div>
+                    <h3 class="card-title">Cobuckets</h3>
+                    <p class="card-desc">A simple website to declare and track your goals. Mostly built with Opus.</p>
+                    <div class="card-footer">
+                        <a href="https://www.reddit.com/r/ClaudeAI/comments/1q0bic0/comment/nwwrkad/" target="_blank" rel="noopener" class="card-link">View on Reddit →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 15 - Habit Tracker RPG -->
+            <article class="project-card" data-category="app">
+                <a href="https://www.reddit.com/r/ClaudeAI/comments/1q0bic0/comment/nwxf9k3/" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/habit-tracker-rpg.png" alt="Habit Tracker RPG" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">App</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by u/sage_of_majic</span>
+                    </div>
+                    <h3 class="card-title">Habit Tracker RPG</h3>
+                    <p class="card-desc">A gamified habit tracker for people who love Dungeons & Dragons and RPGs. Level up your real life habits.</p>
+                    <div class="card-footer">
+                        <a href="https://www.reddit.com/r/ClaudeAI/comments/1q0bic0/comment/nwxf9k3/" target="_blank" rel="noopener" class="card-link">View on Reddit →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 16 - Neural Evolution Simulator -->
+            <article class="project-card" data-category="tool">
+                <a href="https://www.reddit.com/r/ClaudeAI/comments/1q0bic0/comment/nwwla6x/" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/neural-evolution-sim.png" alt="Neural Evolution Simulator" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by u/RedditCommenter38</span>
+                    </div>
+                    <h3 class="card-title">Neural Evolution Simulator</h3>
+                    <p class="card-desc">A 3D arena where species evolve, compete, and get fed through machine learning. Hundreds of "super species" competing over a year of simulations.</p>
+                    <div class="card-footer">
+                        <a href="https://www.reddit.com/r/ClaudeAI/comments/1q0bic0/comment/nwwla6x/" target="_blank" rel="noopener" class="card-link">View on Reddit →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 17 - Claude Code History Browser -->
+            <article class="project-card" data-category="tool">
+                <a href="https://www.reddit.com/r/ClaudeAI/comments/1q0zm9d/i_built_a_tool_to_browse_claude_code_history_by/" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/claude-code-history-browser.png" alt="Claude Code History Browser" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by Reddit user</span>
+                    </div>
+                    <h3 class="card-title">Claude Code History Browser</h3>
+                    <p class="card-desc">A tool to browse and search your Claude Code conversation history by project. See your full coding sessions organized and searchable.</p>
+                    <div class="card-footer">
+                        <a href="https://www.reddit.com/r/ClaudeAI/comments/1q0zm9d/i_built_a_tool_to_browse_claude_code_history_by/" target="_blank" rel="noopener" class="card-link">View on Reddit →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 18 - Reachy Mini Robot -->
+            <article class="project-card" data-category="tool">
+                <a href="https://x.com/ctmorley/status/2006799341734801420" target="_blank" rel="noopener" class="card-image-link">
+                    <div class="card-image">
+                        <img src="images/reachy-mini-robot.png" alt="Reachy Mini Robot with Claude Code" class="card-img">
+                        <span class="source-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="meta-tag">Tool</span>
+                        <span class="meta-dot">·</span>
+                        <span class="meta-author">by @ctmorley</span>
+                    </div>
+                    <h3 class="card-title">Reachy Mini Robot + Claude</h3>
+                    <p class="card-desc">A dad and his 4-year-old assembled a Reachy Mini robot (2 hours), connected it with Claude Code (5 minutes), and brought embodied AI to life at their kitchen table. 40.2K views.</p>
+                    <div class="card-footer">
+                        <a href="https://x.com/ctmorley/status/2006799341734801420" target="_blank" rel="noopener" class="card-link">View on X →</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="load-more-container">
+            <button class="btn btn-outline" id="loadMore">
+                Load More Creations
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Testimonial / Quote -->
+    <section class="quote-section">
+        <div class="quote-inner">
+            <div class="quote-mark">"</div>
+            <blockquote class="quote-text">
+                I'm a 58-year-old retired teacher who never touched code in my life.
+                With Claude, I built a genealogy website for my family in a weekend.
+                My grandkids think I'm a wizard now.
+            </blockquote>
+            <cite class="quote-author">— Margaret, first-time creator</cite>
+        </div>
+    </section>
+
+    <!-- Submit Section -->
+    <section id="submit" class="submit-section">
+        <div class="submit-container">
+            <div class="submit-info">
+                <span class="section-tag">Join the Gallery</span>
+                <h2 class="section-title">Share Your Creation</h2>
+                <p class="submit-desc">
+                    Built something with Claude? We'd love to showcase it! Whether it's your
+                    first line of code or your hundredth project, every creation has a story worth sharing.
+                </p>
+                <div class="submit-benefits">
+                    <div class="benefit">
+                        <span class="benefit-icon">🎯</span>
+                        <div>
+                            <strong>Inspire Others</strong>
+                            <p>Show what's possible and encourage more people to create</p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <span class="benefit-icon">🌟</span>
+                        <div>
+                            <strong>Get Featured</strong>
+                            <p>Outstanding projects get highlighted in our featured section</p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <span class="benefit-icon">🤝</span>
+                        <div>
+                            <strong>Join the Community</strong>
+                            <p>Connect with other creators and share your journey</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="submit-form" id="submissionForm">
+                <div class="form-group">
+                    <label for="projectName">Project Name *</label>
+                    <input type="text" id="projectName" name="projectName" required placeholder="What's your creation called?">
+                </div>
+                <div class="form-group">
+                    <label for="creatorName">Your Name / Handle *</label>
+                    <input type="text" id="creatorName" name="creatorName" required placeholder="How should we credit you?">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="We'll only use this to contact you">
+                </div>
+                <div class="form-group">
+                    <label for="projectUrl">Project URL</label>
+                    <input type="url" id="projectUrl" name="projectUrl" placeholder="Link to your project (GitHub, demo, etc.)">
+                </div>
+                <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select a category</option>
+                        <option value="visualizer">Visualizer</option>
+                        <option value="game">Game</option>
+                        <option value="tool">Tool / Utility</option>
+                        <option value="website">Website</option>
+                        <option value="app">App</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Tell Us About It *</label>
+                    <textarea id="description" name="description" required rows="4" placeholder="What does it do? What inspired you? Is this your first coding project?"></textarea>
+                </div>
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="firstProject" id="firstProject">
+                        <span class="checkbox-custom"></span>
+                        <span>This is my first coding project ever! ✨</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span>Submit Your Creation</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <span class="section-tag">About This Place</span>
+                <h2 class="section-title">Why Claude Creations?</h2>
+                <div class="about-text">
+                    <p>
+                        Something magical is happening. People who've never written code are building
+                        audio visualizers. Retirees are creating family websites. Students are launching
+                        their first apps. And they're all doing it with Claude.
+                    </p>
+                    <p>
+                        Claude Creations exists to celebrate these moments — the joy of making
+                        something, the pride of seeing your idea come to life, and the wonder of
+                        what's possible when human creativity meets AI assistance.
+                    </p>
+                    <p>
+                        This isn't about perfect code or polished products. It's about the hippie
+                        on Reddit who built a Winamp visualizer despite having "absolutely no coding
+                        experience." It's about the grandmother who surprised her family. It's about
+                        <em>you</em>, and whatever you're dreaming of building next.
+                    </p>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="visual-stack">
+                    <div class="stack-item stack-1">
+                        <span class="stack-emoji">💡</span>
+                        <span>Ideas become real</span>
+                    </div>
+                    <div class="stack-item stack-2">
+                        <span class="stack-emoji">🤖</span>
+                        <span>Claude helps build</span>
+                    </div>
+                    <div class="stack-item stack-3">
+                        <span class="stack-emoji">🎉</span>
+                        <span>Magic happens</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="cta-inner">
+            <h2 class="cta-title">Ready to create something?</h2>
+            <p class="cta-desc">Claude is waiting to help bring your ideas to life.</p>
+            <div class="cta-actions">
+                <a href="https://claude.ai" target="_blank" rel="noopener" class="btn btn-light">
+                    Try Claude
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </a>
+                <a href="#submit" class="btn btn-ghost">Share Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">Claude Creations</span>
+                <p class="footer-tagline">A community showcase of human + AI creativity</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <a href="#creations">Creations</a>
+                    <a href="#submit">Submit</a>
+                    <a href="#about">About</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="https://claude.ai" target="_blank" rel="noopener">Claude.ai</a>
+                    <a href="https://anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+                    <a href="https://docs.anthropic.com" target="_blank" rel="noopener">Documentation</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <a href="https://reddit.com/r/ClaudeAI" target="_blank" rel="noopener">Reddit</a>
+                    <a href="https://discord.gg/anthropic" target="_blank" rel="noopener">Discord</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Made with Claude, of course. ✦ Not affiliated with Anthropic.</p>
+            <p class="creator-notice">All projects link to original sources. Creators: want changes or removal? <a href="mailto:jacobnhigh@gmail.com">Let us know</a>.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-icon">🎉</div>
+            <h3>Submission Received!</h3>
+            <p>Thank you for sharing your creation! We'll review it and add it to the gallery soon.</p>
+            <button class="btn btn-primary" onclick="closeModal()">Awesome!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
