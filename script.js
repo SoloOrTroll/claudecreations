@@ -7,9 +7,8 @@
 // CONFIGURATION
 // ============================================
 
-// UPDATE THIS after deploying your Cloudflare Worker!
-// Replace YOUR-SUBDOMAIN with your Cloudflare Workers subdomain
-const WORKER_URL = 'https://claudecreations-submit.YOUR-SUBDOMAIN.workers.dev';
+// Cloudflare Worker endpoint for auto-submissions
+const WORKER_URL = 'https://claudecreations-submit.jacobnhigh.workers.dev';
 
 // ============================================
 // INITIALIZATION
