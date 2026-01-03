@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initSmoothScroll();
     initNavScroll();
+    initLoadMore();
 });
 
 // ============================================
@@ -264,11 +265,38 @@ function initNavScroll() {
 // LOAD MORE FUNCTIONALITY
 // ============================================
 
-const loadMoreBtn = document.getElementById('loadMore');
-if (loadMoreBtn) {
+function initLoadMore() {
+    const loadMoreBtn = document.getElementById('loadMore');
+    const projectCards = document.querySelectorAll('.project-card');
+    const INITIAL_VISIBLE = 9;
+
+    if (!loadMoreBtn || projectCards.length <= INITIAL_VISIBLE) {
+        // Hide button if not enough cards
+        if (loadMoreBtn && projectCards.length <= INITIAL_VISIBLE) {
+            loadMoreBtn.style.display = 'none';
+        }
+        return;
+    }
+
+    // Initially hide cards after the first 9
+    projectCards.forEach((card, index) => {
+        if (index >= INITIAL_VISIBLE) {
+            card.classList.add('load-more-hidden');
+            card.style.display = 'none';
+        }
+    });
+
+    // Update button text to show count
+    const hiddenCount = projectCards.length - INITIAL_VISIBLE;
+    loadMoreBtn.innerHTML = `
+        Load ${hiddenCount} More Creations
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+    `;
+
     loadMoreBtn.addEventListener('click', () => {
-        // Placeholder for loading more projects
-        // In a real implementation, this would fetch from an API
+        // Show loading state briefly
         loadMoreBtn.innerHTML = `
             <span>Loading...</span>
             <svg class="spinner" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -279,15 +307,19 @@ if (loadMoreBtn) {
         `;
 
         setTimeout(() => {
-            loadMoreBtn.innerHTML = `
-                No more creations yet!
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M5 12l7 7 7-7"/>
-                </svg>
-            `;
-            loadMoreBtn.disabled = true;
-            loadMoreBtn.style.opacity = '0.6';
-        }, 1000);
+            // Show all hidden cards with staggered animation
+            const hiddenCards = document.querySelectorAll('.project-card.load-more-hidden');
+            hiddenCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.display = '';
+                    card.classList.remove('load-more-hidden');
+                    card.style.animation = 'fadeIn 0.4s ease-out';
+                }, index * 80);
+            });
+
+            // Hide the button
+            loadMoreBtn.style.display = 'none';
+        }, 500);
     });
 }
 
