@@ -1522,3 +1522,78 @@ input, textarea, select {
 .project-card.hidden {
     display: none;
 }
+
+/* ============================================
+   FORM ENHANCEMENTS
+   ============================================ */
+
+.form-hint {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-warm-gray);
+    margin-top: var(--space-xs);
+}
+
+/* ============================================
+   IMAGE PLACEHOLDER GRADIENTS
+   ============================================ */
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.image-placeholder .placeholder-icon {
+    font-size: 3rem;
+    opacity: 0.6;
+}
+
+.gradient-1 {
+    background: linear-gradient(135deg, var(--color-terracotta-light) 0%, var(--color-terracotta) 100%);
+    color: white;
+}
+
+.gradient-2 {
+    background: linear-gradient(135deg, var(--color-sage-light) 0%, var(--color-sage) 100%);
+    color: white;
+}
+
+.gradient-3 {
+    background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+    color: var(--color-charcoal);
+}
+
+.gradient-4 {
+    background: linear-gradient(135deg, #E8D5E0 0%, #B88BA0 100%);
+    color: white;
+}
+
+.gradient-5 {
+    background: linear-gradient(135deg, #D5E8E3 0%, #7BA099 100%);
+    color: white;
+}
+
+/* ============================================
+   SUBMISSION STATUS STYLES
+   ============================================ */
+
+.submit-status {
+    text-align: center;
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-md);
+}
+
+.submit-status.success {
+    background: var(--color-sage-light);
+    color: var(--color-sage-dark);
+}
+
+.submit-status.error {
+    background: var(--color-terracotta-light);
+    color: var(--color-terracotta-dark);
+}

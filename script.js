@@ -4,6 +4,14 @@
  */
 
 // ============================================
+// CONFIGURATION
+// ============================================
+
+// UPDATE THIS after deploying your Cloudflare Worker!
+// Replace YOUR-SUBDOMAIN with your Cloudflare Workers subdomain
+const WORKER_URL = 'https://claudecreations-submit.YOUR-SUBDOMAIN.workers.dev';
+
+// ============================================
 // INITIALIZATION
 // ============================================
 
@@ -106,10 +114,14 @@ function initFormSubmission() {
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalContent = submitBtn.innerHTML;
 
+        // Remove any existing status message
+        const existingStatus = form.querySelector('.submit-status');
+        if (existingStatus) existingStatus.remove();
+
         // Show loading state
         submitBtn.disabled = true;
         submitBtn.innerHTML = `
-            <span>Submitting...</span>
+            <span>Submitting to Claude for review...</span>
             <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="10" stroke-dasharray="60" stroke-dashoffset="20">
                     <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
@@ -119,30 +131,63 @@ function initFormSubmission() {
 
         // Collect form data
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
+        const data = {
+            projectName: formData.get('projectName'),
+            creatorName: formData.get('creatorName'),
+            email: formData.get('email'),
+            projectUrl: formData.get('projectUrl'),
+            imageUrl: formData.get('imageUrl'),
+            category: formData.get('category'),
+            description: formData.get('description'),
+            firstProject: formData.get('firstProject') === 'on'
+        };
 
-        // Simulate submission delay (replace with actual API call)
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            // Submit to Cloudflare Worker
+            const response = await fetch(WORKER_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
 
-        // Log submission (for now, just log to console)
-        console.log('Submission received:', data);
+            const result = await response.json();
 
-        // Store in localStorage as a simple persistence mechanism
-        const submissions = JSON.parse(localStorage.getItem('claudeCreations') || '[]');
-        submissions.push({
-            ...data,
-            id: Date.now(),
-            submittedAt: new Date().toISOString()
-        });
-        localStorage.setItem('claudeCreations', JSON.stringify(submissions));
+            if (result.success) {
+                // Reset form and show success
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalContent;
 
-        // Reset button and form
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalContent;
-        form.reset();
+                // Show success modal with custom message
+                showModalWithMessage(
+                    'Project Approved!',
+                    result.message || 'Your project has been added to the gallery!'
+                );
+            } else {
+                // Show error status
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalContent;
 
-        // Show success modal
-        showModal();
+                const statusDiv = document.createElement('div');
+                statusDiv.className = 'submit-status error';
+                statusDiv.innerHTML = `<strong>Submission flagged:</strong> ${result.reason || result.error || 'Please try again.'}`;
+                form.appendChild(statusDiv);
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+
+            // Reset button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalContent;
+
+            // Show error
+            const statusDiv = document.createElement('div');
+            statusDiv.className = 'submit-status error';
+            statusDiv.innerHTML = '<strong>Connection error:</strong> Please check your internet and try again.';
+            form.appendChild(statusDiv);
+        }
     });
 }
 
@@ -158,11 +203,28 @@ function showModal() {
     }
 }
 
+function showModalWithMessage(title, message) {
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        const titleEl = modal.querySelector('h3');
+        const messageEl = modal.querySelector('p');
+        if (titleEl) titleEl.textContent = title;
+        if (messageEl) messageEl.textContent = message;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
 function closeModal() {
     const modal = document.getElementById('successModal');
     if (modal) {
         modal.classList.remove('active');
         document.body.style.overflow = '';
+        // Reset modal text
+        const titleEl = modal.querySelector('h3');
+        const messageEl = modal.querySelector('p');
+        if (titleEl) titleEl.textContent = 'Submission Received!';
+        if (messageEl) messageEl.textContent = "Thank you for sharing your creation! We'll review it and add it to the gallery soon.";
     }
 }
 
